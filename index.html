@@ -84,10 +84,12 @@
     position:absolute;top:50%;right:-22%;transform:translateY(-46%);
     width:78%;max-width:none;opacity:.62;z-index:1;pointer-events:none;
   }
-  /* The machine itself, sitting on a soft panel so its white background reads as deliberate. */
+  /* The machine itself, on a soft panel so its white background reads as deliberate.
+     Mobile: it sits under the text. Desktop: it takes the right hand side. */
   .hero-shot{
-    margin:38px 0 0;padding:18px 20px;border-radius:20px;
+    margin:34px 22px 0;padding:18px 20px;border-radius:20px;
     background:rgba(255,255,255,.92);box-shadow:var(--e2);
+    position:relative;z-index:3;
   }
   .hero-shot img{display:block;width:100%;height:auto}
 
@@ -263,13 +265,16 @@
     .facts{grid-template-columns:repeat(4,1fr)}
     .steps{grid-template-columns:repeat(5,1fr);gap:26px}
     .hero .sub{font-size:1.125rem}
-    .hero-inner{max-width:58%}
-    .hero h1{margin-left:-0.06em;max-width:13ch}
+    /* Text keeps the left half. Nothing sets a max-width on the wrap itself,
+       so the machine can be pinned to the section rather than to the text column. */
+    .hero h1{margin-left:-0.06em;max-width:12ch}
+    .hero .sub{max-width:40ch}
+    .hero .cta-note{max-width:34ch}
     /* At desktop the machine takes the right hand side and the plot artwork sits behind it. */
-    .hero-art{width:52%;right:-6%;opacity:.34}
+    .hero-art{width:52%;right:-6%;opacity:.32}
     .hero-shot{
-      position:absolute;top:50%;right:2%;transform:translateY(-50%);
-      width:38%;margin:0;z-index:3;
+      position:absolute;top:50%;right:3%;transform:translateY(-50%);
+      width:34%;margin:0;
     }
     .keystone{padding:38px 36px}
     .card--crown{margin-top:-14px}
@@ -338,10 +343,10 @@
       <a class="cta" href="register.html">Leave your first name</a>
       <p class="cta-note">A first name and an email. Nothing else, and nothing to pay.</p>
     </div>
-
-    <figure class="hero-shot shot reveal d3" data-img="kangen-8.webp"
-            data-alt="The Kangen 8 water ioniser, with the wider Enagic range behind it"></figure>
   </div>
+
+  <figure class="hero-shot shot reveal d3" data-img="kangen-8.webp"
+          data-alt="The Kangen 8 water ioniser, with the wider Enagic range behind it"></figure>
 </section>
 
 <!-- ================= PROBLEM ================= -->
