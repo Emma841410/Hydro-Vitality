@@ -48,6 +48,18 @@ const server = http.createServer((req, res) => {
 
   if (pathname === '/') pathname = '/index.html';
 
+  // Tells the page which photographs are actually in the folder, so it never
+  // requests one that is missing and never logs a 404 for it.
+  if (pathname === '/assets.json') {
+    return fs.readdir(ROOT, (err, files) => {
+      const images = (files || []).filter(f => /\.(jpg|jpeg|png|webp|gif)$/i.test(f));
+      send(res, 200, JSON.stringify({ images }), {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-store'
+      });
+    });
+  }
+
   // Resolve inside ROOT, and refuse anything that tries to climb out of the folder.
   const resolved = path.resolve(ROOT, '.' + pathname);
   if (resolved !== ROOT && !resolved.startsWith(ROOT + path.sep)) {

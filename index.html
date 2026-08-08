@@ -593,11 +593,14 @@
 </footer>
 
 <script>
-// Photographs: test-load each one, and only open the slot if the file is genuinely there.
-// A missing photo leaves no gap at all rather than a hole where a picture should be.
+// Photographs. The server lists which files are actually in the folder, so a photo that
+// hasn't been added yet is never requested: no console error, and no gap on the page.
+// Drop emma.jpg or kangen-8.png into the folder and its slot opens on the next load.
 (function(){
-  document.querySelectorAll('.shot[data-img]').forEach(function(slot){
-    var src = slot.getAttribute('data-img');
+  var slots = document.querySelectorAll('.shot[data-img]');
+  if(!slots.length) return;
+
+  function open(slot, src){
     var probe = new Image();
     probe.onload = function(){
       var img = document.createElement('img');
@@ -610,7 +613,21 @@
       slot.classList.add('has-img');
     };
     probe.src = src;
-  });
+  }
+
+  fetch('assets.json', {cache:'no-store'})
+    .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+    .then(function(data){
+      var have = (data && data.images) || [];
+      slots.forEach(function(slot){
+        var src = slot.getAttribute('data-img');
+        if(have.indexOf(src) > -1) open(slot, src);
+      });
+    })
+    .catch(function(){
+      // Opened straight from a folder with no server. Try each file directly.
+      slots.forEach(function(slot){ open(slot, slot.getAttribute('data-img')); });
+    });
 })();
 
 (function(){
