@@ -64,7 +64,11 @@ const server = http.createServer((req, res) => {
   fs.stat(resolved, (err, stat) => {
     if (!err && stat.isFile()) return serveFile(res, resolved);
 
-    // Anything unknown falls back to the funnel rather than a dead end.
+    // A missing asset must 404 honestly. Handing back the homepage instead would leave
+    // the browser holding space for an image that is never going to arrive.
+    if (ext) return send(res, 404, 'Not found');
+
+    // Only extension-less paths fall back to the funnel, so a mistyped link still lands somewhere.
     const fallback = path.join(ROOT, 'index.html');
     fs.stat(fallback, (e2, s2) => {
       if (!e2 && s2.isFile()) return serveFile(res, fallback);
