@@ -1,0 +1,9 @@
+{
+  "name": "hydro-vitality",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hydro-Vitality funnel and capture page",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

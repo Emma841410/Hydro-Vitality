@@ -1,0 +1,11 @@
+# Internal working documents. These stay on Emma's machine and never reach the web server.
+*.md
+!README.md
+
+# Local tooling config
+.claude/
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
