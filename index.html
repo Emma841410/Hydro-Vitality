@@ -210,9 +210,11 @@
     font-family:var(--serif);
   }
   .band-deep .shot-cap{color:var(--on-deep-mute)}
-  /* If the file isn't in the folder yet, the slot and its caption close rather than breaking. */
-  .shot.no-img{display:none}
-  .shot.no-img + .shot-cap{display:none}
+  /* Slots stay shut until a photograph actually loads, so a missing file leaves no gap. */
+  .shot{display:none}
+  .shot-cap{display:none}
+  .shot.has-img{display:block}
+  .shot.has-img + .shot-cap{display:block}
 
   .grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60;opacity:.4;mix-blend-mode:overlay}
 
@@ -392,11 +394,8 @@
         <p>I'm not going to tell you it will fix you. Nobody can honestly tell you that, and anyone who does is selling. What I will tell you is what it is, what it costs, and why I still drink it every day. Then you decide, in your own time, with no one hurrying you.</p>
       </div>
       <div class="reveal d2">
-        <figure class="shot shot--portrait" style="margin:0">
-          <img src="emma.jpg" width="800" height="1000" loading="lazy" decoding="async"
-               alt="Emma Compton, smiling, who founded Hydro-Vitality in 2024"
-               onerror="this.closest('.shot').classList.add('no-img')">
-        </figure>
+        <figure class="shot shot--portrait" data-img="emma.jpg"
+                data-alt="Emma Compton, smiling, who founded Hydro-Vitality in 2024" style="margin:0"></figure>
         <p class="shot-cap">Emma, who drinks the same water she sells.</p>
       </div>
     </div>
@@ -409,11 +408,9 @@
     <p class="eyebrow reveal">What you actually get</p>
     <h2 class="reveal">What arrives, and what it costs.</h2>
 
-    <figure class="shot shot--product reveal d1" style="margin:26px 0 0;max-width:660px">
-      <img src="kangen-8.png" width="1320" height="743" loading="lazy" decoding="async"
-           alt="The Kangen 8 ioniser standing in front of the wider Enagic range"
-           onerror="this.closest('.shot').classList.add('no-img')">
-    </figure>
+    <figure class="shot shot--product reveal d1" data-img="kangen-8.png"
+            data-alt="The Kangen 8 ioniser standing in front of the wider Enagic range"
+            style="margin:26px 0 0;max-width:660px"></figure>
     <p class="shot-cap" style="margin-bottom:4px">The Kangen 8, front and centre. The rest of the Enagic range behind it.</p>
 
     <ul class="spec reveal d1">
@@ -596,6 +593,26 @@
 </footer>
 
 <script>
+// Photographs: test-load each one, and only open the slot if the file is genuinely there.
+// A missing photo leaves no gap at all rather than a hole where a picture should be.
+(function(){
+  document.querySelectorAll('.shot[data-img]').forEach(function(slot){
+    var src = slot.getAttribute('data-img');
+    var probe = new Image();
+    probe.onload = function(){
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = slot.getAttribute('data-alt') || '';
+      img.width = probe.naturalWidth;
+      img.height = probe.naturalHeight;
+      img.decoding = 'async';
+      slot.appendChild(img);
+      slot.classList.add('has-img');
+    };
+    probe.src = src;
+  });
+})();
+
 (function(){
   var items = document.querySelectorAll('.reveal');
   var done = false;
