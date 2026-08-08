@@ -197,7 +197,13 @@
   .shot{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--e3);background:var(--cream-2)}
   .shot img{display:block;width:100%;height:auto;object-fit:cover}
   /* Portrait crops tight to the face, so nobody else is in shot. */
-  .shot--portrait img{aspect-ratio:4/5;object-position:50% 36%}
+  /* Tight head and shoulders. Shows roughly 24% to 70% of the source frame,
+     which keeps Emma's face and leaves everything behind her outside the crop. */
+  .shot--portrait{aspect-ratio:4/5}
+  .shot--portrait img{
+    position:absolute;width:180%;height:auto;left:-40%;top:-52%;
+    max-width:none;aspect-ratio:auto;
+  }
   /* A wash that sits the photograph inside the palette rather than on top of it. */
   .shot--portrait::after{
     content:"";position:absolute;inset:0;pointer-events:none;
