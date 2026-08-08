@@ -5,27 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leave your name | Hydro-Vitality</title>
 <meta name="description" content="Leave a first name and an email address and Emma will write to you herself.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 34'%3E%3Cpath d='M13 1.5C13 1.5 24 14 24 21.5A11 11 0 0 1 2 21.5C2 14 13 1.5 13 1.5Z' fill='none' stroke='%2322C9B8' stroke-width='2.4'/%3E%3Ccircle cx='13' cy='22' r='4' fill='%23FF8360'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 34'%3E%3Cpath d='M13 1.5C13 1.5 24 14 24 21.5A11 11 0 0 1 2 21.5C2 14 13 1.5 13 1.5Z' fill='none' stroke='%2338B6FF' stroke-width='2.4'/%3E%3Ccircle cx='13' cy='22' r='4' fill='%23FF6F4E'/%3E%3C/svg%3E">
 <style>
   :root{
-    --ink:#0A555F;
-    --ink-2:#0C6975;
-    --ink-3:#159AA6;
-    --bone:#FFFCF7;
-    --bone-2:#E9F7F4;
-    --slate:#22C9B8;
-    --accent:#FF8360;
-    --accent-hot:#FFA184;
-    --on-dark:#F4FDFB;
-    --on-dark-mute:#CFEDE8;
-    --on-light:#0E3A3C;
-    --on-light-mute:#456F70;
+    --ink:#12639E;
+    --ink-2:#1878BE;
+    --ink-3:#38AEEE;
+    --bone:#FFFDF9;
+    --bone-2:#FFF1E8;
+    --slate:#38B6FF;
+    --accent:#FF6F4E;
+    --accent-hot:#FFC4B0;
+    --on-dark:#F6FCFF;
+    --on-dark-mute:#DCEFFF;
+    --on-light:#123243;
+    --on-light-mute:#4A6473;
     --warn:#FFC46B;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua","Times New Roman",serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --e1:0 1px 2px rgba(4,14,16,.28);
-    --e2:-2px 10px 24px rgba(4,14,16,.34);
-    --e3:-6px 26px 60px rgba(4,14,16,.46);
+    --e1:0 1px 2px rgba(6,26,42,.28);
+    --e2:-2px 10px 24px rgba(6,26,42,.34);
+    --e3:-6px 26px 60px rgba(6,26,42,.46);
   }
 
   *,*::before,*::after{box-sizing:border-box}
@@ -37,8 +37,8 @@
     line-height:1.65;
     color:var(--on-dark);
     background:
-      radial-gradient(130% 90% at 8% 2%, var(--ink-3) 0%, rgba(21,154,166,0) 55%),
-      linear-gradient(165deg, var(--ink-2) 0%, var(--ink) 60%, #07434B 100%);
+      radial-gradient(130% 90% at 8% 2%, var(--ink-3) 0%, rgba(56,174,238,0) 55%),
+      linear-gradient(165deg, var(--ink-2) 0%, var(--ink) 60%, #0B4E80 100%);
     background-attachment:fixed;
     overflow-x:hidden;
     min-height:100vh;
@@ -89,15 +89,15 @@
   input{
     width:100%;font-family:var(--sans);font-size:17px;color:var(--bone);
     background:rgba(255,255,255,.045);
-    border:1px solid rgba(233,228,217,.22);
+    border:1px solid rgba(205,235,255,.22);
     border-radius:12px;padding:16px;line-height:1.3;min-height:52px;
     transition:border-color .2s ease,background .2s ease,box-shadow .2s ease;
   }
-  input::placeholder{color:#7A8E8D}
-  input:hover{border-color:rgba(233,228,217,.34)}
+  input::placeholder{color:#8FB4CC}
+  input:hover{border-color:rgba(205,235,255,.34)}
   input:focus{
     outline:none;border-color:var(--accent);background:rgba(255,255,255,.08);
-    box-shadow:0 0 0 3px rgba(223,164,92,.22);
+    box-shadow:0 0 0 3px rgba(255,111,78,.22);
   }
   input[aria-invalid="true"]{border-color:var(--warn)}
 
@@ -117,8 +117,8 @@
   }
   .cta:hover{background:var(--accent-hot);transform:translateY(-2px)}
   @keyframes breathe{
-    0%,100%{box-shadow:0 0 0 0 rgba(223,164,92,.32), var(--e2)}
-    50%{box-shadow:0 0 34px 8px rgba(223,164,92,.18), var(--e2)}
+    0%,100%{box-shadow:0 0 0 0 rgba(255,111,78,.32), var(--e2)}
+    50%{box-shadow:0 0 34px 8px rgba(255,111,78,.18), var(--e2)}
   }
 
   /* ---------- THANK YOU ---------- */
@@ -143,12 +143,12 @@
   }
   .backlink:hover{color:var(--bone)}
 
-  .demo-note{font-size:12px;line-height:1.65;color:#B7DDD7;margin:26px 0 0;max-width:44ch}
+  .demo-note{font-size:12px;line-height:1.65;color:#CDEBFF;margin:26px 0 0;max-width:44ch}
 
   .page-foot{padding:0 22px 40px}
   .page-foot .wrapf{max-width:470px;margin:0 auto;width:100%}
   .signoff{
-    font-family:var(--serif);font-style:italic;color:#CFEDE8;
+    font-family:var(--serif);font-style:italic;color:#DCEFFF;
     font-size:14.5px;line-height:1.6;margin:0;max-width:40ch;
   }
 

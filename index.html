@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hydro-Vitality | Kangen 8 water ionisers, Emma Compton</title>
 <meta name="description" content="A Kangen 8 water ioniser fitted to your kitchen tap in about ten minutes, and a written record at ninety days telling you what changed.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 34'%3E%3Cpath d='M13 1.5C13 1.5 24 14 24 21.5A11 11 0 0 1 2 21.5C2 14 13 1.5 13 1.5Z' fill='none' stroke='%2322C9B8' stroke-width='2.4'/%3E%3Ccircle cx='13' cy='22' r='4' fill='%23FF8360'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 34'%3E%3Cpath d='M13 1.5C13 1.5 24 14 24 21.5A11 11 0 0 1 2 21.5C2 14 13 1.5 13 1.5Z' fill='none' stroke='%2338B6FF' stroke-width='2.4'/%3E%3Ccircle cx='13' cy='22' r='4' fill='%23FF6F4E'/%3E%3C/svg%3E">
 <style>
   :root{
-    /* Base 70: bright water and warm white. Secondary 20: turquoise. Accent 10: coral. */
-    --deep:#0A555F;
-    --deep-2:#0C6975;
-    --deep-3:#159AA6;
-    --cream:#FFFCF7;
-    --cream-2:#E9F7F4;
-    --aqua:#22C9B8;
-    --aqua-soft:#B6F0E6;
-    --gold:#FF8360;
-    --gold-hot:#FFB89F;
-    --on-deep:#F4FDFB;
-    --on-deep-mute:#CFEDE8;
-    --on-light:#0E3A3C;
-    --on-light-mute:#456F70;
+    /* Base 70: warm white and bright ocean. Secondary 20: sky blue. Accent 10: coral. */
+    --deep:#12639E;
+    --deep-2:#1878BE;
+    --deep-3:#38AEEE;
+    --cream:#FFFDF9;
+    --cream-2:#FFF1E8;
+    --aqua:#38B6FF;
+    --aqua-soft:#CDEBFF;
+    --gold:#FF6F4E;
+    --gold-hot:#FFC4B0;
+    --on-deep:#F6FCFF;
+    --on-deep-mute:#DCEFFF;
+    --on-light:#123243;
+    --on-light-mute:#4A6473;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua","Times New Roman",serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --wrap:1140px;
     --prose:60ch;
     /* One light source, upper left, held for the whole page. */
-    --e1:0 1px 2px rgba(6,32,37,.20);
-    --e2:-2px 10px 26px rgba(6,32,37,.24);
-    --e3:-6px 26px 62px rgba(6,32,37,.34);
+    --e1:0 1px 2px rgba(6,26,42,.20);
+    --e2:-2px 10px 26px rgba(6,26,42,.24);
+    --e3:-6px 26px 62px rgba(6,26,42,.34);
   }
 
   *,*::before,*::after{box-sizing:border-box}
@@ -56,8 +56,8 @@
   .band-deep h1,.band-deep h2,.band-deep h3{color:var(--on-deep)}
   .band-grad{
     background:
-      radial-gradient(120% 95% at 6% 2%, var(--deep-3) 0%, rgba(23,112,124,0) 56%),
-      linear-gradient(165deg, var(--deep-2) 0%, var(--deep) 58%, #072A31 100%);
+      radial-gradient(120% 95% at 6% 2%, var(--deep-3) 0%, rgba(56,174,238,0) 56%),
+      linear-gradient(165deg, var(--deep-2) 0%, var(--deep) 58%, #0B4E80 100%);
     color:var(--on-deep);
   }
   .band-grad h1,.band-grad h2{color:var(--on-deep)}
@@ -70,9 +70,9 @@
 
   .eyebrow{
     font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--aqua);margin:0 0 20px;font-weight:700;
+    color:var(--aqua-soft);margin:0 0 20px;font-weight:700;
   }
-  .band-cream .eyebrow,.band-soft .eyebrow{color:#15665E}
+  .band-cream .eyebrow,.band-soft .eyebrow{color:#125F94}
 
   /* ---------- HERO: the one deliberate asymmetry ---------- */
   .hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 68px;overflow:hidden}
@@ -95,8 +95,8 @@
   }
   .cta:hover{background:var(--gold-hot);transform:translateY(-2px)}
   @keyframes breathe{
-    0%,100%{box-shadow:0 0 0 0 rgba(245,169,60,.40), var(--e2)}
-    50%{box-shadow:0 0 36px 9px rgba(245,169,60,.26), var(--e2)}
+    0%,100%{box-shadow:0 0 0 0 rgba(255,111,78,.40), var(--e2)}
+    50%{box-shadow:0 0 36px 9px rgba(255,111,78,.26), var(--e2)}
   }
   .cta-note{font-size:14.5px;color:var(--on-deep-mute);margin:16px 0 0;max-width:40ch;line-height:1.95}
   .band-cream .cta-note,.band-soft .cta-note{color:var(--on-light-mute)}
@@ -106,7 +106,7 @@
   h3{font-size:1.2rem;letter-spacing:0}
 
   .whisper{
-    font-family:var(--serif);font-style:italic;color:#15665E;
+    font-family:var(--serif);font-style:italic;color:#125F94;
     font-size:clamp(1.15rem,3.6vw,1.45rem);line-height:1.45;max-width:33ch;margin:34px 0 0;
   }
   .band-grad .whisper,.band-deep .whisper{color:var(--aqua-soft)}
@@ -123,7 +123,7 @@
   .cards{display:grid;gap:18px;margin-top:38px}
   .card{
     background:rgba(255,255,255,.055);
-    border:1px solid rgba(139,224,209,.24);
+    border:1px solid rgba(205,235,255,.28);
     border-radius:14px;padding:30px 26px;box-shadow:var(--e1);
   }
   .card .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--aqua-soft);font-weight:700;margin:0 0 18px}
@@ -131,9 +131,9 @@
   .card .fig-sub{font-size:13px;color:var(--on-deep-mute);margin:0 0 16px}
   .card p:last-child{margin-bottom:0;font-size:15.5px;color:var(--on-deep)}
   .card--crown{
-    background:linear-gradient(165deg, rgba(245,169,60,.20) 0%, rgba(245,169,60,.05) 100%);
+    background:linear-gradient(165deg, rgba(255,111,78,.20) 0%, rgba(255,111,78,.05) 100%);
     border:1px solid var(--gold);border-radius:20px;
-    box-shadow:var(--e3), 0 0 0 1px rgba(245,169,60,.24);
+    box-shadow:var(--e3), 0 0 0 1px rgba(255,111,78,.24);
   }
   .card--crown .fig{font-size:3.6rem;color:var(--gold-hot)}
   .card--crown .label{color:var(--gold-hot)}
@@ -142,21 +142,21 @@
   .spec{list-style:none;margin:32px 0 0;padding:0;max-width:620px}
   .spec li{
     display:flex;justify-content:space-between;gap:20px;align-items:baseline;
-    padding:14px 0;border-bottom:1px solid rgba(139,224,209,.20);
+    padding:14px 0;border-bottom:1px solid rgba(205,235,255,.24);
   }
-  .spec .price{font-family:var(--serif);color:var(--gold-hot);white-space:nowrap;font-size:1.05rem}
+  .spec .price{font-family:var(--serif);color:var(--aqua-soft);white-space:nowrap;font-size:1.05rem}
 
   /* ---------- METHOD ---------- */
   .steps{display:grid;gap:24px;margin-top:44px}
   .step .ic{display:block;margin:0 0 12px;color:var(--aqua)}
   .step h3{font-size:1rem;margin:0 0 4px;font-family:var(--sans);font-weight:700}
-  .step h3 b{font-family:var(--serif);font-weight:400;color:var(--gold-hot);margin-right:7px;font-size:1.15rem}
+  .step h3 b{font-family:var(--serif);font-weight:400;color:var(--aqua-soft);margin-right:7px;font-size:1.15rem}
   .step p{font-size:15px;margin:0;color:var(--on-deep-mute);max-width:34ch}
 
   .keystone{
     margin-top:44px;padding:32px 28px;border-radius:20px;
     border:1px solid var(--gold);
-    background:linear-gradient(165deg,rgba(245,169,60,.18) 0%,rgba(245,169,60,.04) 100%);
+    background:linear-gradient(165deg,rgba(255,111,78,.18) 0%,rgba(255,111,78,.04) 100%);
     box-shadow:var(--e2);
   }
   .keystone h3{font-family:var(--serif);font-size:1.5rem;color:var(--on-deep);margin:0 0 10px}
@@ -164,23 +164,23 @@
 
   /* ---------- FACTS ---------- */
   .facts{display:grid;gap:26px;margin-top:34px}
-  .fact .n{font-family:var(--serif);font-size:2.1rem;color:#15665E;line-height:1;margin:0 0 8px}
+  .fact .n{font-family:var(--serif);font-size:2.1rem;color:#125F94;line-height:1;margin:0 0 8px}
   .fact p{font-size:15.5px;margin:0;color:var(--on-light-mute)}
   .aside-num{font-family:var(--sans);font-size:10px;font-weight:700;color:var(--on-light-mute);vertical-align:super;margin-left:3px}
   .margin-note{
     margin-top:30px;padding-left:16px;border-left:2px solid var(--aqua);
     font-size:13.5px;color:var(--on-light-mute);max-width:46ch;line-height:1.7;
   }
-  .margin-note b{font-weight:700;color:#15665E}
+  .margin-note b{font-weight:700;color:#125F94}
 
   /* ---------- FIT ---------- */
   .cols{display:grid;gap:40px;margin-top:34px}
   .col h3{margin-bottom:6px;font-size:1.3rem}
   .col .ic{display:block;margin:0 0 14px}
-  .col--yes .ic{color:#15665E}
+  .col--yes .ic{color:#125F94}
   .col--no .ic{color:var(--on-light-mute)}
   .col ul{list-style:none;margin:0;padding:0}
-  .col li{padding:11px 0;border-bottom:1px solid rgba(18,50,56,.11);font-size:16px}
+  .col li{padding:11px 0;border-bottom:1px solid rgba(14,42,58,.12);font-size:16px}
 
   /* ---------- FOOTER ---------- */
   footer{background:var(--deep);color:var(--on-deep-mute);padding:60px 0 50px}
@@ -189,7 +189,7 @@
     font-family:var(--serif);font-style:italic;color:var(--on-deep);
     font-size:1.15rem;line-height:1.55;max-width:36ch;margin:0;
   }
-  .smallprint{font-size:13px;line-height:2.1;max-width:56ch;margin:0;color:#B7DDD7}
+  .smallprint{font-size:13px;line-height:2.1;max-width:56ch;margin:0;color:#CDEBFF}
   .smallprint a{text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:12px 0}
 
   /* ---------- IMAGERY ---------- */
@@ -207,7 +207,7 @@
   /* A wash that sits the photograph inside the palette rather than on top of it. */
   .shot--portrait::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(150deg, rgba(34,201,184,.16) 0%, rgba(255,131,96,.10) 100%);
+    background:linear-gradient(150deg, rgba(34,201,184,.16) 0%, rgba(255,111,78,.10) 100%);
     mix-blend-mode:multiply;
   }
   .shot--product{background:transparent;box-shadow:none;border-radius:0}
