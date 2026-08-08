@@ -84,6 +84,12 @@
     position:absolute;top:50%;right:-22%;transform:translateY(-46%);
     width:78%;max-width:none;opacity:.62;z-index:1;pointer-events:none;
   }
+  /* The machine itself, sitting on a soft panel so its white background reads as deliberate. */
+  .hero-shot{
+    margin:38px 0 0;padding:18px 20px;border-radius:20px;
+    background:rgba(255,255,255,.92);box-shadow:var(--e2);
+  }
+  .hero-shot img{display:block;width:100%;height:auto}
 
   /* ---------- BUTTON ---------- */
   .cta{
@@ -259,7 +265,12 @@
     .hero .sub{font-size:1.125rem}
     .hero-inner{max-width:58%}
     .hero h1{margin-left:-0.06em;max-width:13ch}
-    .hero-art{width:52%;right:-6%;opacity:.72}
+    /* At desktop the machine takes the right hand side and the plot artwork sits behind it. */
+    .hero-art{width:52%;right:-6%;opacity:.34}
+    .hero-shot{
+      position:absolute;top:50%;right:2%;transform:translateY(-50%);
+      width:38%;margin:0;z-index:3;
+    }
     .keystone{padding:38px 36px}
     .card--crown{margin-top:-14px}
     .hero{padding:78px 0 46px}
@@ -321,24 +332,28 @@
 
   <div class="wrap hero-inner">
     <p class="eyebrow reveal">Hydro-Vitality &middot; Kangen water ionisers, UK</p>
-    <h1 class="reveal d1">A Kangen 8 water ioniser in your kitchen. And in ninety days, a real <em>answer</em>.</h1>
-    <p class="sub reveal d2">It fits to your existing tap in about ten minutes. We write down how you're doing before you buy, then look at it again ninety days later, so you can see for yourself whether the water did anything. I'm Emma, and I sell these because I drink it myself.</p>
+    <h1 class="reveal d1">Water you'll actually want to drink. And in ninety days, a real <em>answer</em>.</h1>
+    <p class="sub reveal d2">The Kangen 8 fits to your existing kitchen tap in about ten minutes. We write down how you're doing before you buy, then look at it again ninety days later, so you can see for yourself whether it did anything. I'm Emma. I drink it myself, which is how I found it.</p>
     <div class="reveal d3">
       <a class="cta" href="register.html">Leave your first name</a>
       <p class="cta-note">A first name and an email. Nothing else, and nothing to pay.</p>
     </div>
+
+    <figure class="hero-shot shot reveal d3" data-img="kangen-8.webp"
+            data-alt="The Kangen 8 water ioniser, with the wider Enagic range behind it"></figure>
   </div>
 </section>
 
 <!-- ================= PROBLEM ================= -->
 <section class="band-cream pad-tight">
   <div class="wrap">
-    <p class="eyebrow reveal">Why I built it this way</p>
-    <h2 class="reveal">You've every reason to be careful.</h2>
+    <p class="eyebrow reveal">If you're trying to drink more water</p>
+    <h2 class="reveal">You know you should. Yours tastes like the tap.</h2>
     <div class="prose reveal d1">
-      <p>You've tried things before. Some of them cost real money, and every one of them left you guessing afterwards, because not one of them arrived with a way of telling you whether it had actually done anything.</p>
-      <p>That's the part I wanted to put right. Not with a bigger promise, because you've heard plenty of those and so have I. With a record.</p>
-      <p>We write down where you're starting from, before you spend a penny. Ninety days later we look at the two side by side, together, and you get to see it for yourself rather than take my word for it.</p>
+      <p>Most people who decide to drink more water manage it for about a week. Then the glass sits there going warm on the side, because water you don't enjoy is water you don't finish.</p>
+      <p>That's the dull little reason most of it fails. Not willpower. Taste.</p>
+      <p>The Kangen 8 sits on your kitchen tap, filters what comes through it, and runs it through electrolysis. Whether you like how it tastes is something you'll know on day one, not in six months.</p>
+      <p>What you won't know on day one is whether it's done anything for you. Nobody can tell from a nice glass of water. So we write down where you're starting from before you spend a penny, and ninety days later we look at the two side by side, together, and you see it for yourself rather than take my word for it.</p>
     </div>
     <p class="whisper reveal d2"><span>You're not after another thing to try.</span> You're after an answer.</p>
   </div>
@@ -414,11 +429,6 @@
   <div class="wrap">
     <p class="eyebrow reveal">What you actually get</p>
     <h2 class="reveal">What arrives, and what it costs.</h2>
-
-    <figure class="shot shot--product reveal d1" data-img="kangen-8.webp"
-            data-alt="The Kangen 8 ioniser standing in front of the wider Enagic range"
-            style="margin:26px 0 0;max-width:660px"></figure>
-    <p class="shot-cap" style="margin-bottom:4px">The Kangen 8, front and centre. The rest of the Enagic range behind it.</p>
 
     <ul class="spec reveal d1">
       <li><span>The Kangen 8 ioniser</span><span class="price">&euro;4,200 +VAT</span></li>
