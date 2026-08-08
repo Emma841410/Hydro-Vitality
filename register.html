@@ -288,6 +288,16 @@
 (function(){
   var TO = 'compton.emma@outlook.com';
 
+  // ---------------------------------------------------------------------------
+  // LEADS: paste your form endpoint between the quotes below and every entry
+  // arrives in your inbox on its own, with nothing for the visitor to do.
+  // Get one free at formspree.io or tally.so. It looks like:
+  //   https://formspree.io/f/xxxxxxxx
+  // Leave it empty and the page falls back to opening a pre-filled email,
+  // which only reaches you if the visitor presses send.
+  // ---------------------------------------------------------------------------
+  var FORM_ENDPOINT = '';
+
   var items = document.querySelectorAll('.reveal');
   function showAll(){ for(var i=0;i<items.length;i++){ items[i].classList.add('is-in'); } }
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -298,6 +308,12 @@
     },{threshold:0.05});
     for(var i=0;i<items.length;i++){ io.observe(items[i]); }
     setTimeout(showAll, 2500);
+  }
+
+  // Once the endpoint is filled in, the setup reminders take themselves off the page.
+  if(FORM_ENDPOINT){
+    var notes = document.querySelectorAll('.demo-note');
+    for(var n=0;n<notes.length;n++){ notes[n].style.display = 'none'; }
   }
 
   var form = document.getElementById('leadForm');
@@ -346,6 +362,21 @@
     }catch(err){ /* a full or blocked store must never cost the person their confirmation */ }
   }
 
+  function postLead(entry){
+    try{
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify({
+          firstName: entry.firstName,
+          email: entry.email,
+          received: entry.at,
+          source: 'Hydro-Vitality register page'
+        })
+      }).catch(function(){ /* confirmation is already on screen */ });
+    }catch(err){ /* same */ }
+  }
+
   function openMail(entry){
     try{
       var body = 'New enquiry from the Hydro-Vitality register page.\n\n'
@@ -382,13 +413,14 @@
     var entry = { firstName: firstName, email: email, at: new Date().toISOString() };
     save(entry);
 
-    // Confirmation first, always. The email step is allowed to fail.
+    // Confirmation first, always. Whatever happens behind it is allowed to fail.
     thanksHead.textContent = 'Thank you, ' + firstName + '. That’s landed with me.';
     formState.style.display = 'none';
     thanksState.classList.add('on');
     window.scrollTo(0,0);
 
-    setTimeout(function(){ openMail(entry); }, 120);
+    if(FORM_ENDPOINT){ postLead(entry); }
+    else { setTimeout(function(){ openMail(entry); }, 120); }
   });
 })();
 </script>
