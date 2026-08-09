@@ -82,9 +82,12 @@
   .me{margin:0 0 26px;display:flex;align-items:center;gap:16px}
   .me img{
     width:84px;height:84px;flex:none;border-radius:50%;
-    object-fit:cover;object-position:50% 41%;
+    object-fit:cover;object-position:50% 30%;
     border:2px solid rgba(255,255,255,.5);
     box-shadow:var(--e2);display:block;
+    /* Source photo is lit entirely in red. Strip that out and regrade it
+       into the page's own blue rather than leave it clashing. */
+    filter:grayscale(1) brightness(1.85) contrast(1.15) sepia(.5) hue-rotate(175deg) saturate(2.1);
   }
   .me figcaption{
     font-family:var(--serif);font-style:italic;font-size:14.5px;
@@ -233,8 +236,8 @@
     <!-- FORM -->
     <div id="formState">
       <figure class="me reveal">
-        <img src="emma.jpg" width="1333" height="2000" decoding="async"
-             alt="Emma Compton, smiling, who founded Hydro-Vitality">
+        <img src="emma-2.jpg" width="1333" height="2000" decoding="async"
+             alt="Emma Compton, smiling">
         <figcaption>Emma. It's me who reads it and me who writes back.</figcaption>
       </figure>
       <p class="eyebrow reveal">Hydro-Vitality</p>

@@ -2,6 +2,9 @@
 *.md
 !README.md
 
+# Customer paperwork. Printed and filled in on a call, not published.
+baseline.html
+
 # Local tooling config
 .claude/
 
