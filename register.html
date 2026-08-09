@@ -77,6 +77,20 @@
     color:var(--accent);margin:0 0 20px;font-weight:600;
   }
 
+  /* Emma's face, before the ask. Circular crop centred on her, so nothing
+     behind her in the original photograph comes into the frame. */
+  .me{margin:0 0 26px;display:flex;align-items:center;gap:16px}
+  .me img{
+    width:84px;height:84px;flex:none;border-radius:50%;
+    object-fit:cover;object-position:50% 41%;
+    border:2px solid rgba(255,255,255,.5);
+    box-shadow:var(--e2);display:block;
+  }
+  .me figcaption{
+    font-family:var(--serif);font-style:italic;font-size:14.5px;
+    color:var(--on-dark-mute);line-height:1.5;max-width:26ch;
+  }
+
   .reassure{color:var(--on-dark-mute);font-size:1.0625rem;line-height:1.6;margin:22px 0 32px;max-width:40ch}
 
   /* ---------- FORM ---------- */
@@ -218,6 +232,11 @@
 
     <!-- FORM -->
     <div id="formState">
+      <figure class="me reveal">
+        <img src="emma.jpg" width="1333" height="2000" decoding="async"
+             alt="Emma Compton, smiling, who founded Hydro-Vitality">
+        <figcaption>Emma. It's me who reads it and me who writes back.</figcaption>
+      </figure>
       <p class="eyebrow reveal">Hydro-Vitality</p>
       <h1 class="reveal d1">Leave a name. I'll write to you <em>myself</em>.</h1>
       <p class="reassure reveal d2">No payment, no calendar to fill in, no run of automated emails afterwards. One message, from me, and you're free to tell me to leave it.</p>
