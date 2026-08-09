@@ -220,6 +220,15 @@
   }
   .shot--product{background:transparent;box-shadow:none;border-radius:0}
   .shot--product img{aspect-ratio:16/9;object-fit:contain}
+  /* A second portrait, shot entirely in red light. Own crop rather than the
+     waterfall photo's framing, and regraded into the page's own blue instead
+     of the usual teal/coral wash, which was tuned for a normally-lit photo. */
+  .shot--tinted img{
+    position:static;width:100%;height:100%;max-width:none;
+    object-fit:cover;object-position:50% 30%;aspect-ratio:auto;
+    filter:grayscale(1) brightness(1.85) contrast(1.15) sepia(.5) hue-rotate(175deg) saturate(2.1);
+  }
+  .shot--tinted::after{content:none}
   .shot-cap{
     font-size:13px;color:var(--on-light-mute);margin:12px 0 0;line-height:1.6;font-style:italic;
     font-family:var(--serif);
@@ -354,13 +363,20 @@
   <div class="wrap">
     <p class="eyebrow reveal">If you're trying to drink more water</p>
     <h2 class="reveal">You know you should. Yours tastes like the tap.</h2>
-    <div class="prose reveal d1">
-      <p>Most people who decide to drink more water manage it for about a week. Then the glass sits there going warm on the side, because water you don't enjoy is water you don't finish.</p>
-      <p>That's the dull little reason most of it fails. Not willpower. Taste.</p>
-      <p>The Kangen 8 sits on your kitchen tap, filters what comes through it, and runs it through electrolysis. Whether you like how it tastes is something you'll know on day one, not in six months.</p>
-      <p>What you won't know on day one is whether it's done anything for you. Nobody can tell from a nice glass of water. So we write down where you're starting from before you spend a penny, and ninety days later we look at the two side by side, together, and you see it for yourself rather than take my word for it.</p>
+    <div class="split">
+      <div class="prose reveal d1">
+        <p>Most people who decide to drink more water manage it for about a week. Then the glass sits there going warm on the side, because water you don't enjoy is water you don't finish.</p>
+        <p>That's the dull little reason most of it fails. Not willpower. Taste.</p>
+        <p>The Kangen 8 sits on your kitchen tap, filters what comes through it, and runs it through electrolysis. Whether you like how it tastes is something you'll know on day one, not in six months.</p>
+        <p>What you won't know on day one is whether it's done anything for you. Nobody can tell from a nice glass of water. So we write down where you're starting from before you spend a penny, and ninety days later we look at the two side by side, together, and you see it for yourself rather than take my word for it.</p>
+        <p class="whisper reveal d2"><span>You're not after another thing to try.</span> You're after an answer.</p>
+      </div>
+      <div class="reveal d2">
+        <figure class="shot shot--portrait shot--tinted" data-img="emma-2.jpg"
+                data-alt="Emma Compton, smiling" style="margin:0"></figure>
+        <p class="shot-cap">Emma, who drinks the same water she sells.</p>
+      </div>
     </div>
-    <p class="whisper reveal d2"><span>You're not after another thing to try.</span> You're after an answer.</p>
   </div>
 </section>
 
