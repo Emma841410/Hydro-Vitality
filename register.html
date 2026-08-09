@@ -82,11 +82,11 @@
      tablet width up, same crop-and-grade language as the front page. */
   .intro{display:flex;flex-direction:column;gap:20px;margin:0 0 8px}
   .intro-photo{
-    width:132px;flex:none;border-radius:16px;overflow:hidden;
+    width:132px;aspect-ratio:4/5;flex:none;border-radius:16px;overflow:hidden;
     box-shadow:var(--e2);margin:0;
   }
   .intro-photo img{
-    display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;
+    display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;
     /* Source photo is lit entirely in red. Strip that out and regrade it
        into the page's own blue rather than leave it clashing. */
     filter:grayscale(1) brightness(1.85) contrast(1.15) sepia(.5) hue-rotate(175deg) saturate(2.1);
@@ -246,8 +246,7 @@
     <div id="formState">
       <div class="intro">
         <figure class="intro-photo reveal">
-          <img src="emma-2.jpg" width="1333" height="2000" decoding="async"
-               alt="Emma Compton, smiling">
+          <img src="emma-2.jpg" decoding="async" alt="Emma Compton, smiling">
           <figcaption>Emma</figcaption>
         </figure>
         <div class="intro-text">
